@@ -6,16 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class TimerControl : MonoBehaviour
 {
-    float startTime = 60;
+    private float timer;
     private bool startGame;
     public static float currentTime;
-    Text timer;
 
     public void Start()
     {
         startGame = false;
-        currentTime = startTime;
-        timer = GetComponent<Text>();
     }
 
     public void Update()
@@ -30,16 +27,15 @@ public class TimerControl : MonoBehaviour
         }
 
         if (startGame)
-        {
-            currentTime -= Time.deltaTime;
-            timer.text = $"Time: {Mathf.Round(currentTime)} Seconds";
-        }
+        { 
+            timer += Time.deltaTime;
 
-        if (currentTime <= 0)
-        {
-            timer.text = "OUT OF TIME";
-            SceneManager.LoadScene(2);
+            if (timer > 2f)
+            {
+                ScoreScript.currentScore += 1;
+                //Reset the timer to 0.
+                timer = 0;
+            }
         }
-
     }
 }

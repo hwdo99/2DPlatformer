@@ -14,7 +14,7 @@ public class LivesScript : MonoBehaviour
     void Start()
     {
         lives = startingLives;
-        livesTxt = GetComponent<Text>();
+        livesTxt = GameObject.FindWithTag("DisplayLives").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -123,13 +123,15 @@ public class LivesScript : MonoBehaviour
 
             PlayerPrefs.Save();
 
-            EndGameScrene();
+
+            StartCoroutine(EndGameScrene());
         }
 
     }
 
-    public void EndGameScrene()
+    public IEnumerator EndGameScrene()
     {
+        yield return new WaitForSeconds(0.75f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

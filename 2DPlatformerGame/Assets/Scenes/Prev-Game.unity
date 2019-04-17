@@ -528,7 +528,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1453158508}
-  - {fileID: 561102337}
+  - {fileID: 7990925414387199646}
   - {fileID: 746408261}
   - {fileID: 22304327}
   - {fileID: 268589457}
@@ -553,12 +553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d915982edb0e1d4b826463e6174e46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &561102337 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 561102337, guid: b77c30038413da345ab93a7c8a5918a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 7990925414387199645}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &632822139
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,16 +871,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 552911963}
     m_Modifications:
-    - target: {fileID: 6702598665971170162, guid: b77c30038413da345ab93a7c8a5918a0,
-        type: 3}
-      propertyPath: m_Name
-      value: SpaceShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 6702598665971170162, guid: b77c30038413da345ab93a7c8a5918a0,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 561102337, guid: b77c30038413da345ab93a7c8a5918a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -971,6 +955,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6702598665971170162, guid: b77c30038413da345ab93a7c8a5918a0,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702598665971170162, guid: b77c30038413da345ab93a7c8a5918a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5741740562979039500, guid: b77c30038413da345ab93a7c8a5918a0,
         type: 3}
       propertyPath: powerUpPrefab
@@ -994,3 +988,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b77c30038413da345ab93a7c8a5918a0, type: 3}
+--- !u!4 &7990925414387199646 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 7990925414387199645}
+  m_PrefabAsset: {fileID: 0}

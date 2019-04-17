@@ -13,7 +13,7 @@ public class ScoreScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreTxt = GetComponent<Text>();
+        scoreTxt = GameObject.FindWithTag("DisplayScore").GetComponent<Text>();
         currentScore = 0;
 
         if (!PlayerPrefs.HasKey($"High Score0"))
