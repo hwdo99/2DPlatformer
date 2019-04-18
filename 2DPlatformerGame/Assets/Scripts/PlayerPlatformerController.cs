@@ -70,9 +70,18 @@ public class PlayerPlatformerController : PhysicsObject {
                 LivesScript.lives -= 1;
                 StartCoroutine(Hurt());
              }
+
+            if (collidedWith.tag == "Bullet" && collidedWith != null)
+            {
+                SFXManage.instance.PlayHitSFX();
+                Destroy(collidedWith);
+                animator.SetBool("hurt", true);
+                isHurt = true;
+                LivesScript.lives -= 1;
+                StartCoroutine(Hurt());
+            }
             return;
         }
-
     }
 
     private IEnumerator Hurt()

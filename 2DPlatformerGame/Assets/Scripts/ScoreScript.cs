@@ -13,7 +13,7 @@ public class ScoreScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreTxt = GameObject.FindWithTag("DisplayScore").GetComponent<Text>();
+        scoreTxt = GetComponent<Text>();
         currentScore = 0;
 
         if (!PlayerPrefs.HasKey($"High Score0"))
@@ -67,8 +67,8 @@ public class ScoreScript : MonoBehaviour
             PlayerPrefs.SetInt($"High Score9", defaultHighScore); // If it’s not, then save one
         }
         highscore0 = PlayerPrefs.GetInt("High Score0"); // Save the high score as a reference
-        PlayerPrefs.Save();
 
+        PlayerPrefs.Save();
     }
 
     // Update is called once per frame

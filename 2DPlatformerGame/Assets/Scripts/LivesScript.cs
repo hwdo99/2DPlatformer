@@ -8,21 +8,23 @@ public class LivesScript : MonoBehaviour
 {
     public static int startingLives = 3;
     public static int lives;
+    
     Text livesTxt;
 
     // Start is called before the first frame update
     void Start()
     {
         lives = startingLives;
-        livesTxt = GameObject.FindWithTag("DisplayLives").GetComponent<Text>();
+        livesTxt = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
         livesTxt.text = "Lives: " + lives + " / " + startingLives;
-        if (lives <= 0)
+        if (lives == 0 || FinishFlag.isFinished == true)
         {
+            FinishFlag.isFinished = false;
 
             if (ScoreScript.currentScore >= PlayerPrefs.GetInt("High Score0"))
             {
@@ -123,15 +125,13 @@ public class LivesScript : MonoBehaviour
 
             PlayerPrefs.Save();
 
-
-            StartCoroutine(EndGameScrene());
+            EndGameScrene();
         }
 
     }
 
-    public IEnumerator EndGameScrene()
+    void EndGameScrene()
     {
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(2);
     }
 }

@@ -11,6 +11,9 @@ public class SFXManage : MonoBehaviour
     public AudioClip buttonSFX;
     public AudioClip crumbleSFX;
     public AudioClip HitSFX;
+    public AudioClip fireSFX;
+    public AudioClip wakeUpSFX;
+    public AudioClip finishSFX;
     public static float SFXvolume;
 
     private void Awake()
@@ -52,5 +55,20 @@ public class SFXManage : MonoBehaviour
     public void PlayHitSFX()
     {
         SFXSource.PlayOneShot(HitSFX);
+    }
+
+    public void PlayFireSFX()
+    {
+        SFXSource.PlayOneShot(fireSFX);
+    }
+
+    public void PlayWakeUpSFX()
+    {
+        SFXSource.PlayOneShot(wakeUpSFX);
+    }
+
+    public void PlayFinishSFX()
+    {
+        SFXSource.PlayOneShot(finishSFX);
     }
 }

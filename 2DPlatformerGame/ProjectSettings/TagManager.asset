@@ -10,9 +10,9 @@ TagManager:
   - StartAndEndText
   - DisplayScore
   - Scoreboard
-  - ScoreboardEnd
   - DisplayLives
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -1028,6 +1028,9 @@ MonoBehaviour:
   buttonSFX: {fileID: 8300000, guid: 59a0be019a455e94bb1825cd93fdfa5c, type: 3}
   crumbleSFX: {fileID: 8300000, guid: 8d5f5c24e6ced21429c92ba7af151ae6, type: 3}
   HitSFX: {fileID: 8300000, guid: 5cde965d1f113f84e894ae3ecd24100c, type: 3}
+  fireSFX: {fileID: 8300000, guid: 5dc321795fd25684ab37b7f9af33ca84, type: 3}
+  wakeUpSFX: {fileID: 8300000, guid: 236bf290dab623745b50393731b63b36, type: 3}
+  finishSFX: {fileID: 8300000, guid: 501357fbe4372d34d9d4d2a9fd4fa89a, type: 3}
 --- !u!1 &489586768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,7 +1445,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0f5b458094e0bf6488a62093e2fa36b2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5e62f8cfbe757c848978a73ca4abe9ad, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
