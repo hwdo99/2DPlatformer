@@ -11,8 +11,8 @@ TagManager:
   - DisplayScore
   - Scoreboard
   - ScoreboardEnd
-  - Lava
   - DisplayLives
+  - Enemy
   layers:
   - Default
   - TransparentFX

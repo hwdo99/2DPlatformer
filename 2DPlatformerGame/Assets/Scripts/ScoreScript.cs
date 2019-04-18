@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
-    int defaultHighScore = 100;
+    int defaultHighScore = 50;
     public static int highscore0;
     public static int currentScore;
     public static List<int> scores = new List<int>(10);

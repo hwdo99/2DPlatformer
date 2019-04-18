@@ -131,7 +131,7 @@ public class LivesScript : MonoBehaviour
 
     public IEnumerator EndGameScrene()
     {
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

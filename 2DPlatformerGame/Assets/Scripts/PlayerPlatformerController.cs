@@ -62,9 +62,9 @@ public class PlayerPlatformerController : PhysicsObject {
         if (isHurt) return;
         else
         {
-            if (collidedWith.tag == "Lava" && collidedWith != null)
+            if (collidedWith.tag == "Enemy" && collidedWith != null)
             {
-                //SFXManage.instance.PlayGetPowerUpSFX();
+                SFXManage.instance.PlayHitSFX();
                 animator.SetBool("hurt", true);
                 isHurt = true;
                 LivesScript.lives -= 1;
@@ -74,6 +74,7 @@ public class PlayerPlatformerController : PhysicsObject {
         }
 
     }
+
     private IEnumerator Hurt()
     {
         yield return new WaitForSeconds(0.75f);

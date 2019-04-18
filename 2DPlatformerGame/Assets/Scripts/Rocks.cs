@@ -2,27 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudPlatformScript : MonoBehaviour
+public class Rocks : MonoBehaviour
 {
+    Rigidbody2D rockBody;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rockBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void OnCollisionEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collidedWith = collision.gameObject;
         if (collidedWith.tag == "Player" && collidedWith != null)
         {
+            SFXManage.instance.PlayCrumbleSFX();
             StartCoroutine(Wait());
-            this.gameObject.transform.Translate(Vector3.down * 10 *Time.deltaTime);
+            rockBody.isKinematic = false;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
         return;
     }

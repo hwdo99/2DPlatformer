@@ -6,10 +6,18 @@ using UnityEngine.SceneManagement;
 public class GameManage : MonoBehaviour
 {
 
-    public void StartGame()
+    public void StartLevel1()
     {
+        LevelTracker.Level1 = true;
         SFXManage.instance.PlayButtonSFX();
         SceneManager.LoadScene(1);
+    }
+
+    public void StartLevel2()
+    {
+        LevelTracker.Level2 = true;
+        SFXManage.instance.PlayButtonSFX();
+        SceneManager.LoadScene(9);
     }
 
     public void ResumeGame()
@@ -30,7 +38,8 @@ public class GameManage : MonoBehaviour
     {
         SFXManage.instance.PlayButtonSFX();
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        if (LevelTracker.Level1) SceneManager.LoadScene(1);
+        if (LevelTracker.Level2) SceneManager.LoadScene(9);
     }
 
     public void ScoreMenu()
@@ -79,5 +88,17 @@ public class GameManage : MonoBehaviour
     {
         SFXManage.instance.PlayButtonSFX();
         SceneManager.LoadScene(7, LoadSceneMode.Additive);  
+    }
+
+    public void ToChooseLevel()
+    {
+        SFXManage.instance.PlayButtonSFX();
+        SceneManager.LoadScene(8, LoadSceneMode.Additive);
+    }
+
+    public void ToMainMenuFromChooseLevel()
+    {
+        SFXManage.instance.PlayButtonSFX();
+        SceneManager.UnloadSceneAsync(8);
     }
 }

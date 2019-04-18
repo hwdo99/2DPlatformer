@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class MusicManage : MonoBehaviour
 {
+    public static MusicManage instance;
     public static AudioSource MusicSource;
     public static float musicVolume;
 
     private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        // makes sure theres only 1 copy
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
+        DontDestroyOnLoad(this.gameObject);
         MusicSource = GetComponent<AudioSource>();
         if (!PlayerPrefs.HasKey("Music"))
         {

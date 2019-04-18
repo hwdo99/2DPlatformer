@@ -9,13 +9,8 @@ public class SFXManage : MonoBehaviour
     public static SFXManage instance;
     public static AudioSource SFXSource;
     public AudioClip buttonSFX;
-    public AudioClip fireSFX;
-    public AudioClip explosionSFX;
-    public AudioClip destroyEnemySFX;
-    public AudioClip getPowerUpSFX;
-    public AudioClip PowerUpShotSFX;
-    public AudioClip BossHitSFX;
-    public AudioClip BossDestroyedSFX;
+    public AudioClip crumbleSFX;
+    public AudioClip HitSFX;
     public static float SFXvolume;
 
     private void Awake()
@@ -33,7 +28,7 @@ public class SFXManage : MonoBehaviour
             }
         }
 
-        DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(this.gameObject);
         SFXSource = GetComponent<AudioSource>();
         if (!PlayerPrefs.HasKey("SFX"))
         {
@@ -48,39 +43,14 @@ public class SFXManage : MonoBehaviour
     {
         SFXSource.PlayOneShot(buttonSFX);
     }
-
-    public void PlayFireSFX()
+    
+    public void PlayCrumbleSFX()
     {
-        SFXSource.PlayOneShot(fireSFX);
+        SFXSource.PlayOneShot(crumbleSFX);
     }
 
-    public void PlayExplosionSFX()
+    public void PlayHitSFX()
     {
-        SFXSource.PlayOneShot(explosionSFX);
-    }
-
-    public void PlayDestroyEnemySFX()
-    {
-        SFXSource.PlayOneShot(destroyEnemySFX);
-    }
-
-    public void PlayGetPowerUpSFX()
-    {
-        SFXSource.PlayOneShot(getPowerUpSFX);
-    }
-
-    public void PlayPowerUpShotSFX()
-    {
-        SFXSource.PlayOneShot(PowerUpShotSFX);
-    }
-
-    public void PlayBossHitSFX()
-    {
-        SFXSource.PlayOneShot(BossHitSFX);
-    }
-
-    public void PlayBossDestroyedSFX()
-    {
-        SFXSource.PlayOneShot(BossDestroyedSFX);
+        SFXSource.PlayOneShot(HitSFX);
     }
 }
